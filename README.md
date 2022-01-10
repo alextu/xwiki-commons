@@ -1,3 +1,5 @@
+[![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.grails.org/scans)
+
 # XWiki Commons
 
 [XWiki Commons](http://commons.xwiki.org/xwiki/bin/view/Main/) are technical libraries common to several other top level XWiki projects. 
