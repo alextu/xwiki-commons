@@ -24,14 +24,14 @@
     xmlns="https://www.gradle.com/gradle-enterprise-maven" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://www.gradle.com/gradle-enterprise-maven https://www.gradle.com/schema/gradle-enterprise-maven.xsd">
   <server>
-    <url>https://ge.xwiki.org</url>
+    <url>#{env['GE_XWIKI_URL']}</url>
   </server>
   <buildScan>
     <publishIfAuthenticated>true</publishIfAuthenticated>
     <!-- Always publish build scans on CI but on demand for devs so that we don't get false positives on ge.xwiki.org
          due to local changes from users and so that it doesn't pollute the ge.xwiki.org data.
          To force publishing a build scan: -Dscan -->
-    <publish>#{env['CI'] == null ? 'ON_DEMAND' : 'ALWAYS'}</publish>
+    <publish>ALWAYS</publish>
     <captureGoalInputFiles>true</captureGoalInputFiles>
     <!-- Use background scans only locally to avoid potential issues on CI (the ephemeral docker agent could terminate
          as soon as the build is finished and thus the upload may be terminated before it completes) -->
