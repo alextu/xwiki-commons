@@ -88,7 +88,7 @@
           "regex": true,
           "ignore": true,
           "code": "java\\.class\\.externalClassExposedInAPI",
-          "package": "org\\.xwiki\\..*",
+          "package": "org\\.xwiki(\\..*)?",
           "justification": "Dragging of other XWiki types to the API is OK."
         },
         // Same rule for the old com.xpn.xwiki package.
@@ -96,8 +96,16 @@
           "regex": true,
           "ignore": true,
           "code": "java\\.class\\.externalClassExposedInAPI",
-          "package": "com\\.xpn\\.xwiki\\..*",
+          "package": "com\\.xpn\\.xwiki(\\..*)?",
           "justification": "Dragging of other XWiki types to the API is OK."
+        },
+        {
+          "regex": true,
+          "ignore": true,
+          "code": "java\\.annotation\\.attributeAdded",
+          "annotation": "@java\\.lang\\.Deprecated.*",
+          "attribute": "since",
+          "justification": "There's no risk about semantic change since before XWiki moved to Java 11, the @Deprecated annotation didn't support any parameter."
         },
         {
           // We reclassify all source compatibility checks to be of EQUIVALENT severity so that the build doesn't fail
