@@ -2339,7 +2339,7 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>cobertura-maven-plugin</artifactId>
           <!-- Lock down plugin version for build reproducibility -->
-          <version>2.5.1</version>
+          <version>2.7</version>
         </plugin>
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
@@ -3243,7 +3243,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.5.1</version>
+        <version>2.7</version>
       </plugin>
     </plugins>
   </reporting>
